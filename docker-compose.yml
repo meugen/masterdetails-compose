@@ -1,0 +1,33 @@
+name: masterdetails
+
+services:
+  app: 
+    image: ghcr.io/meugen/masterdetails-service:main
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      PGSQL_HOSTNAME: db
+      PGSQL_USERNAME: ${PGSQL_USERNAME}
+      PGSQL_PASSWORD: ${PGSQL_PASSWORD}
+    networks:
+      - masterdetails-network
+
+  db: 
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${PGSQL_PASSWORD}
+      POSTGRES_USER: ${PGSQL_USERNAME}
+      POSTGRES_DB: masterdetails
+    networks:
+      - masterdetails-network
+    volumes:
+      - type: bind
+        source: /home/meugen/data/masterdetails
+        target: /var/lib/postgresql/data
+    
+
+networks:
+  masterdetails-network:
+  
