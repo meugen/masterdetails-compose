@@ -12,6 +12,8 @@ services:
       PGSQL_PASSWORD: ${PGSQL_PASSWORD}
     networks:
       - masterdetails-network
+    depends_on:
+      - db
 
   db: 
     image: postgres:17-alpine
@@ -30,4 +32,3 @@ services:
 
 networks:
   masterdetails-network:
-  
