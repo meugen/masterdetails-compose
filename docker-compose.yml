@@ -28,7 +28,7 @@ services:
       - masterdetails-network
     volumes:
       - type: bind
-        source: /home/meugen/data/masterdetails
+        source: /data/masterdetails
         target: /var/lib/postgresql/data
 
   redis:
