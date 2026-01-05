@@ -19,7 +19,8 @@
 * Terraform
 * AWS / AWS SDK
 
-### Can be tested at [masterdetails](https://masterdetails.meugen.in.ua/)
+### Can be tested at [masterdetails](https://masterdetails.do.meugen.in.ua/)
+
 
 
 
